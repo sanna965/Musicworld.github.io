@@ -1,0 +1,491 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;  
+    color: white;
+  }
+  
+  @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body {
+	margin: 0;
+	width: 100%;
+	height: 100vh;
+	color: #ffffff;
+  display: flex;
+  min-height: 100vh;
+  background: #000;
+  overflow-x: hidden;
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	/*linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);*/
+
+	/*.color-change-5x{-webkit-animation:color-change-5x 10s ease-in-out infinite alternate-reverse both;animation:color-change-5x 10s ease-in-out infinite alternate-reverse both}*/
+	background-size: 400% 400%;
+	animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+ /*background css end */
+    
+    /*nav start*/
+     .vertical-nav {
+      min-width: 17rem;
+      width: 17rem;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s;
+      background:linear-gradient(black, #2c11b3 , #fc45d9 );
+      border-right: 1px solid grey;
+    }
+    
+    .navitm{
+      
+      background-color: transparent;
+      font-weight: bolder;
+      font-size: 18px;
+      padding-left: 5%;
+    }
+    .navitm a{
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+      font-weight: lighter;
+      font-size: 20px;      
+    }
+    .navitm a:hover{
+      text-decoration: none;
+      color: rgb(156, 138, 138);
+      font-weight: lighter;
+    }
+    /*search bar*/
+#searchbar{
+  margin-left: 0%;
+  padding:10px;
+  border: none;
+  
+}
+.btn{
+  margin-left: 0%;
+  margin-right: 0%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+input[type=text] {
+   width: 100%;
+   -webkit-transition: width 0.15s ease-in-out;
+   transition: width 0.15s ease-in-out;  }
+
+/*search bar end*/
+
+  
+    /*nav end */
+
+/*page content */
+
+.page-content {
+    width:100%;
+    margin-left: 17.5rem;
+  }
+  
+  .separator {
+    margin: 18rem 0;
+    border-bottom: 1px dashed #fff;
+  }
+    
+/*page content end*/
+
+
+/*main content*/
+.text{
+  padding-top: 5%;
+  padding-bottom: 7%;
+  text-align: center;
+  color: #000   ;
+}
+.text h1{
+  font-size: 78px;
+  font-weight: bolder;
+
+}
+.text h4{
+  color: rgb(77, 66, 66);
+}
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: -40%;
+  }
+
+  .gallery-item {
+    width: 250px;
+    height: 265px;
+    margin: 30px;
+    text-decoration: none;
+    margin-bottom: -4%;
+    
+  }
+  .gallery-item img {
+    position: absolute;
+    border-radius: 100%;
+    width: 280px;
+    height: 250px;
+    object-fit: cover;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.9);
+  }
+  .img5{
+    object-fit: cover;
+    object-position: 70% 50%;
+  }
+  .text-wrapper {
+    position: relative;
+    width: 280px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    border-radius: 100%;
+  }
+
+  .text-wrapper:hover {
+    transition: all 0.8s ease;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 1;
+  }
+
+  .name {
+    font-size: 1.5em;
+  }
+
+  /* Because there is no hover on a touch devide, we need to move the text to the bottom of the image and display it by default */
+
+  @media only screen and (max-width: 1224px) {
+    .text-wrapper {
+      opacity: 1;
+      justify-content: flex-end;
+      text-shadow: 1px 1px 1px #000;
+    }
+    .title {
+      margin-bottom: 1em;
+    }
+  }
+/*main content end*/
+
+/*pop up content*/
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+.popup .close {
+  position: absolute;
+  top: 7px;
+  right: 32.5%;
+  transition: all 200ms;
+  font-size: 70px;
+  font-weight: bold;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+.popup .main_div{
+
+background: color rgb(0, 0, 0);
+display: grid;
+place-items: center;
+}
+.popup   .music_container{
+    
+width: 35rem;
+height: 38rem;
+background-color: rgb(182, 23, 71);
+border-radius: 2rem;
+box-shadow:  0 0 15px #000, 0 0 15px #000 inset;
+padding: 3rem;
+text-align: center;
+margin-top: 1%;
+}
+    
+.popup  .music_container #title {
+text-transform: uppercase;
+color: rgb(0, 0, 0);
+font-size: 4rem;
+font-weight: 500;
+text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
+padding-bottom: 3%;
+text-align: left;
+font-weight: bolder;
+}
+.popup   .music_container #artist{
+color: rgb(255, 255, 255);
+text-transform: capitalize;
+font-weight: 300;
+padding-bottom: 2%;
+text-decoration: underline rgb(0, 0, 0);
+text-align: left;
+}
+.popup  .music_container p{
+  font-size: 1.5rem;
+  color: #000;
+  padding-bottom: 2%;
+}
+.popup .text2{
+  border: rgb(0, 0, 0) 1px solid;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  border-radius: 5px;
+  margin-top: 4%;
+  background-color:#000000 ;
+  box-shadow:  0 0 15px #000, 0 0 15px #000 inset;
+
+}
+.popup .music_controls{
+  width: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+   margin: auto;
+   padding-bottom: 2%;
+   padding-top: 5%;
+
+}
+.popup   #audio {
+    
+  color: #111111;
+  font-size:  1.5rem;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 7%;
+
+}
+.popup   #audio .audio-player {
+  --player-button-width: 8em;
+    
+}
+.popup .music_controls .main_button {    
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: rgb(0, 0, 0);
+  color: #f6f6f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  padding-bottom: 2%;
+}
+.popup      .music_controls .fas{
+  color: rgb(255, 255, 255);
+}
+.popup      .music_controls .fas:hover{
+color: gray;
+}
+
+.progress {
+  width: 100%;
+  height: 2.5px;
+  background: #ffffff;
+  transition: width .1s linear;
+}
+
+/*pop up content end */
+
+
+
+
+ footer {
+background: #1A1E25;
+color: #868c96;
+margin-top: 10%;
+}
+
+footer p {
+padding: 40px 0;
+text-align: center;
+}
+
+@media screen and (max-width: 680px) {
+  body{
+    background: linear-gradient(  #23a6d5, );
+
+	animation: gradientBG 15s ease infinite;
+  }
+  .vertical-nav {
+    height:8%;
+    width: 100% ;
+    background: rgb(206, 25, 121);
+    display: inline-flex;
+    overflow: hidden;
+    z-index: 2;
+  }
+  .vertical-nav .media img{
+    width: 30px;
+    height: 30px;
+    margin-bottom: 18%;
+  }
+  .vertical-nav .media .media-body{
+    padding-left: 6px;
+    letter-spacing: .5px;
+    padding-bottom: 19%;
+  }
+  .py-4 {
+    padding-top: .8rem!important;
+    padding-bottom: 1.5rem!important;
+}
+  .vertical-nav .media .media-body h4{
+    font-size: 22px;
+  }
+  .vertical-nav .media .media-body p{
+    letter-spacing: 1px;
+    font-weight: lighter;
+    font-size: 12px;
+  }
+  .vertical-nav .hf{
+    display: none; 
+  }
+
+  .newn {
+    display: flex;
+    height: 30%;
+    flex-direction: row;
+    justify-content: flex-end; 
+    list-style: none;
+    padding-top: 35px;
+    white-space: nowrap;
+   
+  }
+  .navitm{
+    padding-left: 0%;
+  }
+  .newn ul li a {
+    font-size: 13px;
+    padding-left: 0%;
+  }
+  .newn ul li .nn{
+    display: none;
+  }
+  .newn ul li a svg {
+    width: 12px;
+  }
+  
+  .page-content{
+    width: 100%;
+    margin: 0%;
+  }
+ input[type=text] {
+    width: 93%;
+    
+    }
+    #searchbar{
+      margin-left: 0%;
+    margin-top: 20%;
+    padding: 5px;
+    border: none;
+  }
+      
+    
+    .btn{
+      padding-left: 4%;
+      margin-top: 20%;
+    }
+.text{
+  text-align: left;
+}
+.text h1{
+  font-size: 56px;  
+}
+.text h4{
+  font-size: 18px;
+}
+
+.container{
+  width: auto;
+}
+.gallery{
+  z-index: 1;
+}
+.popup{
+  z-index: 1;
+}
+.popup .music_container{
+  width: 92%;
+    height: 84%;
+    margin-top: 18%;
+}
+.popup .music_container #title {
+  font-size: 38px;
+    padding-top: 6px;
+    text-align: left;
+}
+.popup .music_container  p{
+  font-size: 16px;
+}
+.popup .close{
+  left: 83%;
+  top: 65px;
+  font-size: 53px;
+}
+.popup  .text2{
+  width: 123%;
+  margin-left: -29px;
+  height: 30%;
+}
+.popup #audio{
+ height: 40px;
+}
+.popup  .music_container #artist{
+  padding-bottom: 1%;
+    margin-bottom: -8px;
+}
+footer{
+  display: block;
+  padding: 36%;
+  margin: -1%;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

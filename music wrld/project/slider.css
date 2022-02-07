@@ -1,0 +1,256 @@
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+   font-family:Arial, Helvetica, sans-serif;
+  
+  }
+  
+  body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #161623;
+  }
+  
+  body::before{
+    content: '';
+    position: absolute;
+      top: 0%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(#f00, #f0f);
+      clip-path: circle(30% at right 70% );
+  }
+  
+  body::after{
+    content: '';
+    position: absolute;
+      top: 0%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(#2196f3, #e91e63);
+      clip-path: circle(20% at 10% 10% );
+  }
+  .container{
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 1200px;
+      flex-wrap: wrap;
+      z-index: 1;
+
+  }
+  .container .card{
+      position: relative;
+      width: 280px;
+      height: 400px;
+      margin: 30px;
+      box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+      border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: 5px;    
+}
+.container .card .content{
+    padding: 20px;
+    text-align: center;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 0.5s;
+
+}
+.container .card:hover .content{
+    transform: translateY(100px);
+    opacity: 1;
+}
+.container .card .content h2{
+    position: absolute;
+    top: -100px;
+    right: 30px;
+    font-size: 8rem;
+    color: rgba(255, 255, 255, 0.05);
+    pointer-events: none;
+
+}
+.container .card .content h3{
+    font-size: 1.8rem;
+    color: #fff;
+    z-index: 1;
+}
+.container .card .content p{
+    font-size: 1em;
+    color: #fff;
+    z-index: 1;
+}
+.container .card .content a{
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    margin-top: 15px;
+    background: #fff;
+    color: black;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2  );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*body{
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: black;
+    overflow: hidden;
+
+}
+.slider-container{
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color:chocolate ;
+
+}
+.image-slider{
+    width: 100%;
+    height: 600px;
+    position: absolute;
+    display: flex;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    transition: .7s;
+}
+.slides-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 30px 0 30px;
+}
+.img{
+    position: relative;
+    width: 240px;
+    height: 370px;
+    transition: .5s;
+    filter: saturate(10%);
+}
+.button{
+    position: absolute;
+    width: 240px;
+    height: 370px;
+    transition: .5s;
+    background-color: rgba(0, 0, 0, .4);
+
+}
+.button:hover{
+    background-color: rgba(0, 0, 0, .2);
+}
+#slider-span1:target ~ .image-slider #img1,
+#slider-span1:target ~ .image-slider #button-1{
+    width: 380px;
+    height: 585px;
+    background-color: transparent;
+    filter: saturate(100%);
+}
+#slider-span2:target ~ .image-slider #img2,
+#slider-span2:target ~ .image-slider #button-2{
+    width: 380px;
+    height: 585px;
+    background-color: transparent;
+    filter: saturate(100%);
+}
+#slider-span3:target ~ .image-slider #img3,
+#slider-span3:target ~ .image-slider #button-3{
+    width: 380px;
+    height: 585px;
+    background-color: transparent;
+    filter: saturate(100%);
+}
+#slider-span4:target ~ .image-slider #img4,
+#slider-span4:target ~ .image-slider #button-4{
+    width: 380px;
+    height: 585px;
+    background-color: transparent;
+    filter: saturate(100%);
+}
+#slider-span5:target ~ .image-slider #img5,
+#slider-span5:target ~ .image-slider #button-5{
+    width: 380px;
+    height: 585px;
+    background-color: transparent;
+    filter: saturate(100%);
+}
+#slider-span6:target ~ .image-slider #img6,
+#slider-span6:target ~ .image-slider #button-6{
+    width: 380px;
+    height: 585px;
+    background-color: transparent;
+    filter: saturate(100%);
+}
+#slider-span7:target ~ .image-slider #img7,
+#slider-span7:target ~ .image-slider #button-7{
+    width: 380px;
+    height: 585px;
+    background-color: transparent;
+    filter: saturate(100%);
+}
+
+.slider-span1:target ~ .image-slider{left: 70%;}
+.slider-sapn2:target ~ .image-slider{left: 50%;}
+.slider-sapn3:target ~ .image-slider{left: 20%;}
+.slider-sapn4:target ~ .image-slider{left: 70%;}
+.slider-sapn5:target ~ .image-slider{left: -25%;}
+.slider-sapn6:target ~ .image-slider{left: -50%;}
+.slider-sapn7:target ~ .image-slider{left: -70%;}*/
+
+
+<ol id='list'>
+<li class="animals">Cat</li>
+<li class="animals">Dog</li>
+<li class="animals">Elephant</li>
+<li class="animals">Fish</li>
+<li class="animals">Gorilla</li>
+<li class="animals">Monkey</li>
+<li class="animals">Turtle</li>
+<li class="animals">Whale</li>
+<li class="animals">Aligator</li>
+<li class="animals">Donkey</li>
+<li class="animals">Horse</li>
+</ol>
